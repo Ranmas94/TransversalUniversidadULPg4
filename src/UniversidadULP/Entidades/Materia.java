@@ -59,7 +59,7 @@ public class Materia {
         this.activo = activo;
     }
 
-    // Método toString para una representación de la clase
+    // Método toString
     @Override
     public String toString() {
         return "Materia{" +

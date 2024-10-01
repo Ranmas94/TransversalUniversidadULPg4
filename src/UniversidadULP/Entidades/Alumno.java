@@ -79,7 +79,7 @@ public class Alumno {
         this.activo = activo;
     }
 
-    // Método toString para una representación de la clase
+    // Método toString act
     @Override
     public String toString() {
         return "Alumno{" +
