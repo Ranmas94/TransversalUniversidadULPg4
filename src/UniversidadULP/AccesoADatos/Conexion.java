@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
  * @author Stefani Escobar
  */
 public class Conexion {
-    private static final String URL="jdbc:mysql://localhost/";
+    private static final String URL="jdbc:mariadb://localhost:3306";
     private static final String DB="gp4gestionulp.sql";
     private static final String USUARIO="root";
     private static final String PASSWORD="";
