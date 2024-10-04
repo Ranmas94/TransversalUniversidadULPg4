@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-10-2024 a las 00:46:29
+-- Tiempo de generación: 04-10-2024 a las 03:50:18
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -18,10 +18,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `gp4getionulp`
+-- Base de datos: `gp4gestionulp`
 --
-CREATE DATABASE IF NOT EXISTS `gp4getionulp` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `gp4getionulp`;
+CREATE DATABASE IF NOT EXISTS `gp4gestionulp` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `gp4gestionulp`;
 
 -- --------------------------------------------------------
 
@@ -43,7 +43,12 @@ CREATE TABLE `alumno` (
 --
 
 INSERT INTO `alumno` (`idAlumno`, `dni`, `apellido`, `nombre`, `fechadeNacimiento`, `estado`) VALUES
-(1, 12345678, 'Debe', 'Maria', '1998-05-14', 1);
+(1, 23232323, 'Escudero', 'Lourdes', '2001-10-28', 0),
+(2, 99887766, 'Aguilera', 'Victor', '1991-11-01', 1),
+(3, 34567899, 'Escobar', 'Estefani', '2000-03-24', 1),
+(4, 10101010, 'Poblete', 'Dante', '2003-11-10', 0),
+(5, 99999999, 'Grippo', 'Federico', '1999-04-14', 1),
+(6, 11110000, 'Matilla', 'Maximiliano', '1999-05-12', 1);
 
 -- --------------------------------------------------------
 
@@ -58,13 +63,6 @@ CREATE TABLE `inscripcion` (
   `idAlumno` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Volcado de datos para la tabla `inscripcion`
---
-
-INSERT INTO `inscripcion` (`idInscripto`, `nota`, `idMateria`, `idAlumno`) VALUES
-(1, 8, 1, 1);
-
 -- --------------------------------------------------------
 
 --
@@ -77,13 +75,6 @@ CREATE TABLE `materia` (
   `anio` int(11) NOT NULL,
   `estado` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `materia`
---
-
-INSERT INTO `materia` (`idMateria`, `nombre`, `anio`, `estado`) VALUES
-(1, 'Matematicas', 1, 1);
 
 --
 -- Índices para tablas volcadas
@@ -119,13 +110,13 @@ ALTER TABLE `materia`
 -- AUTO_INCREMENT de la tabla `alumno`
 --
 ALTER TABLE `alumno`
-  MODIFY `idAlumno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idAlumno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `inscripcion`
 --
 ALTER TABLE `inscripcion`
-  MODIFY `idInscripto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idInscripto` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `materia`
