@@ -36,7 +36,7 @@ public class InscripcionData {
              
              
              ps.setInt(1, insc.getAlumno().getIdAlumno());
-             ps.setInt(2, insc.getMateria().getIdInscripcion());
+             ps.setInt(2, insc.getMateria().getIdMateria());
              ps.setDouble(3, insc.getNota());
              
              ps.executeUpdate();
@@ -113,7 +113,7 @@ public class InscripcionData {
             
             while (rs.next()){
             materia = new Materia();
-            materia.setIdInscripcion(rs.getInt("idIncripcion"));
+            materia.setIdMateria(rs.getInt("idIncripcion"));
             materia.setNombre(rs.getString("nombre"));
             materia.setAnioMateria(rs.getInt("año"));
             materias.add(materia);  
@@ -145,7 +145,7 @@ public class InscripcionData {
             
             while (rs.next()){
             materia = new Materia();
-            materia.setIdInscripcion(rs.getInt("idIncripcion"));
+            materia.setIdMateria(rs.getInt("idIncripcion"));
             materia.setNombre(rs.getString("nombre"));
             materia.setAnioMateria(rs.getInt("año"));
             

@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package UniversidadULP.AccesoADatos;
 
 import UniversidadULP.Entidades.Materia;
@@ -13,8 +9,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -29,7 +23,7 @@ public class MateriaData {
     }
        //Guardar materia
       public void guardarMateria(Materia materia){
-         String sql = "INSERT INTO materia (nombre, anioMateria, estado) "
+         String sql = "INSERT INTO materia (nombre, anio, estado) "
                  + "VALUES (?,?,?) ";
          
          try {
@@ -43,19 +37,19 @@ public class MateriaData {
              
              ResultSet rs = ps.getGeneratedKeys();
              while(rs.next()){
-                 materia.setIdInscripcion(rs.getInt(1));
+                 materia.setIdMateria(rs.getInt(1));
                 JOptionPane.showMessageDialog(null,"Materia guardada");
              }
              
              ps.close();
              
          } catch (SQLException ex) {
-             JOptionPane.showMessageDialog(null,"Error al acceder a la tabla materia"+ ex);
+             JOptionPane.showMessageDialog(null,"Error al guardar materia "+ ex);
          }
      }
        //Buscar materia por id
      public Materia buscarMateria(int idInscripcion){
-         String sql ="SELECT nombre,anioMateria, estado FROM Materia WHERE idInscripcion = ?";
+         String sql ="SELECT nombre,anio, estado FROM Materia WHERE idMateria = ?";
          
          Materia mat = null;
          try {
@@ -65,8 +59,8 @@ public class MateriaData {
               
               if(rs.next()){
                   mat = new Materia();
-                  mat.setIdInscripcion(rs.getInt("nombre"));
-                  mat.setAnioMateria(rs.getInt("anioMateria"));
+                  mat.setNombre(rs.getString("nombre"));
+                  mat.setAnioMateria(rs.getInt("anio"));
                   mat.setActivo(rs.getBoolean("estado"));
                   
               }else{
@@ -75,13 +69,13 @@ public class MateriaData {
              
              ps.close();
          } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null,"Error al acceder a la tabla materia"+ ex);
+            JOptionPane.showMessageDialog(null,"Error al buscar materia "+ ex);
          }
          return mat;
      }
      //Modificar Materia
       public void modificarMateria(Materia materia){
-          String sql = "UPDATE materia SET nombre=?,anioMateria=?,estado=? WHERE idInscripcion = ? ";
+          String sql = "UPDATE materia SET nombre=?,anio=?,estado=? WHERE idMateria = ? ";
           
          try {
              PreparedStatement ps = con.prepareStatement(sql);
@@ -97,13 +91,13 @@ public class MateriaData {
             
             ps.close();
          } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null,"Error al acceder a la tabla materia"+ ex);
+            JOptionPane.showMessageDialog(null,"Error al modificar materia "+ ex);
          }
           
       }
       //Eliminar materia de DB
        public void borrarMateria(int idInscrpcion){
-           String sql = "DELETE FROM materia WHERE idInscrpcion = ?";
+           String sql = "DELETE FROM materia WHERE idMateria = ?";
            
          
          try {
@@ -117,13 +111,13 @@ public class MateriaData {
             ps.close();
              
          } catch (SQLException ex) {
-             Logger.getLogger(MateriaData.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null,"Error al borrar materia "+ ex);
          }
           
        }
         //listar materias
       public List<Materia> listarMaterias(){
-          String sql = "SELECT idInscripcion,nombre, anioMateria, estado FROM Materia WHERE estado = 1";
+          String sql = "SELECT idMateria,nombre, anio, estado FROM Materia WHERE estado = 1";
           ArrayList<Materia> materias = new ArrayList<>();
           
          try {
@@ -132,9 +126,9 @@ public class MateriaData {
              
              while(rs.next()){
                   Materia mat = new Materia();
-                  mat.setIdInscripcion(rs.getInt("idInscripcion"));
+                  mat.setIdMateria(rs.getInt("idMateria"));
                   mat.setNombre(rs.getString("nombre"));
-                  mat.setAnioMateria(rs.getInt("anioMateria"));
+                  mat.setAnioMateria(rs.getInt("anio"));
                   mat.setActivo(true);
                   
                   materias.add(mat);

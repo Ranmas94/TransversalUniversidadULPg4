@@ -9,7 +9,7 @@ package UniversidadULP.Entidades;
  * @author Ranma
  */
 public class Materia {
-    private int idInscripcion;
+    private int idMateria;
     private String nombre;
     private int anioMateria;
     private boolean activo;
@@ -19,20 +19,28 @@ public class Materia {
     }
 
     // Constructor con todos los atributos
-    public Materia(int idInscripcion, String nombre, int anioMateria, boolean activo) {
-        this.idInscripcion = idInscripcion;
+    public Materia(int idMateria, String nombre, int anioMateria, boolean activo) {
+        this.idMateria = idMateria;
         this.nombre = nombre;
         this.anioMateria = anioMateria;
         this.activo = activo;
     }
 
-    // Getters y Setters
-    public int getIdInscripcion() {
-        return idInscripcion;
+    public Materia(String nombre, int anioMateria, boolean activo) {
+        this.nombre = nombre;
+        this.anioMateria = anioMateria;
+        this.activo = activo;
     }
 
-    public void setIdInscripcion(int idInscripcion) {
-        this.idInscripcion = idInscripcion;
+    
+    
+    // Getters y Setters
+    public int getIdMateria() {
+        return idMateria;
+    }
+
+    public void setIdMateria(int idMateria) {
+        this.idMateria = idMateria;
     }
 
     public String getNombre() {
@@ -63,7 +71,7 @@ public class Materia {
     @Override
     public String toString() {
         return "Materia{" +
-                "idInscripcion=" + idInscripcion +
+                "idMateria=" + idMateria +
                 ", nombre='" + nombre + '\'' +
                 ", anioMateria=" + anioMateria +
                 ", activo=" + activo +
