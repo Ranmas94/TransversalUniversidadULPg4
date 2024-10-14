@@ -177,6 +177,7 @@ private MateriaData matData = new MateriaData();
     }//GEN-LAST:event_jbBuscarActionPerformed
 
     private void jbGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardarActionPerformed
+        
         if(validarCamposVacios(contenedor)){
             JOptionPane.showConfirmDialog(this, "Debe llenar todos los datos.");
             return;
@@ -189,6 +190,7 @@ private MateriaData matData = new MateriaData();
             if(matActual==null){
                 matActual = new Materia(nombre,anio,estado);
                 matData.guardarMateria(matActual);
+                
             }else{
                 matActual.setNombre(nombre);
                 matActual.setAnioMateria(anio);
@@ -199,7 +201,7 @@ private MateriaData matData = new MateriaData();
         }catch(NumberFormatException ex){
             JOptionPane.showConfirmDialog(this, "Usted debe ingresar datos válidos." + ex);
         }
-        limpiarCampos(contenedor);
+        
 
     }//GEN-LAST:event_jbGuardarActionPerformed
 

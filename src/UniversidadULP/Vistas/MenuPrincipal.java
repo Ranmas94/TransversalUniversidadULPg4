@@ -34,7 +34,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         itemFormMateria = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        itemManejodeInscripciones = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
@@ -79,8 +79,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jMenu3.setText("Administración");
 
-        jMenuItem3.setText("Manejo de Inscripciones");
-        jMenu3.add(jMenuItem3);
+        itemManejodeInscripciones.setText("Manejo de Inscripciones");
+        itemManejodeInscripciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemManejodeInscripcionesActionPerformed(evt);
+            }
+        });
+        jMenu3.add(itemManejodeInscripciones);
 
         jMenuItem4.setText("Manipulacion de Notas");
         jMenu3.add(jMenuItem4);
@@ -133,6 +138,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
         escritorio.add(m);
     }//GEN-LAST:event_itemFormMateriaActionPerformed
 
+    private void itemManejodeInscripcionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemManejodeInscripcionesActionPerformed
+        escritorio.removeAll();
+        escritorio.repaint();
+        FormularioInscripcion m = new FormularioInscripcion();
+        m.setVisible(true);
+        escritorio.add(m);
+    }//GEN-LAST:event_itemManejodeInscripcionesActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -172,13 +185,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JDesktopPane escritorio;
     private javax.swing.JMenuItem itemFormAlumno;
     private javax.swing.JMenuItem itemFormMateria;
+    private javax.swing.JMenuItem itemManejodeInscripciones;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     // End of variables declaration//GEN-END:variables
