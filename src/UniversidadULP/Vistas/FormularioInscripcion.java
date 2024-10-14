@@ -281,7 +281,6 @@ private DefaultTableModel modelo = new DefaultTableModel(){
         }
         
         int idMat = (Integer) tabla.getValueAt(row, col);
-       
          Alumno al = (Alumno) cbAlumno.getSelectedItem();
          
          insData.borrarInscripcion(al.getIdAlumno(), idMat);
@@ -289,6 +288,26 @@ private DefaultTableModel modelo = new DefaultTableModel(){
         
         
        }catch(ArrayIndexOutOfBoundsException | ClassCastException e){
+            JOptionPane.showMessageDialog(this, "Debes seleccionar el ID de la materia", "ERROR", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+  }
+  
+  private void inscribir(){
+        try{
+        int row = tabla.getSelectedRow(); //Obtenemos la ubicacion exacta del código seleccionado.
+        int col = tabla.getSelectedColumn();
+        if (col != 0) { //Como todos los códigos se encuentran en la columna 0, si a col se le asigna otro número saldrá un mensaje.
+            JOptionPane.showMessageDialog(this, "Debes seleccionar el ID de la materia", "ERROR", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+         int idMat = (Integer) tabla.getValueAt(row, col);
+         Materia mat = matData.buscarMateria(idMat);
+         Alumno al = (Alumno) cbAlumno.getSelectedItem();
+        
+        
+        
+        }catch(ArrayIndexOutOfBoundsException | ClassCastException e){
             JOptionPane.showMessageDialog(this, "Debes seleccionar el ID de la materia", "ERROR", JOptionPane.ERROR_MESSAGE);
             return;
         }
