@@ -52,6 +52,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             .addGap(0, 543, Short.MAX_VALUE)
         );
 
+        jMenu1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jMenu1.setText("Alumno");
 
         itemFormAlumno.setText("Formulario de Alumno");
@@ -64,6 +65,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
+        jMenu2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jMenu2.setText("Materia");
 
         itemFormMateria.setText("Formulario de Materia");
@@ -76,6 +78,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu2);
 
+        jMenu3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jMenu3.setText("Administración");
 
         itemManejodeInscripciones.setText("Manejo de Inscripciones");
@@ -96,6 +99,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu3);
 
+        jMenu4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jMenu4.setText("Consultas");
 
         itemAlumnoporMateria.setText("Alumnos por Materia");
@@ -108,6 +112,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu4);
 
+        itemSalir.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         itemSalir.setText("Salir");
         itemSalir.addMenuListener(new javax.swing.event.MenuListener() {
             public void menuCanceled(javax.swing.event.MenuEvent evt) {
