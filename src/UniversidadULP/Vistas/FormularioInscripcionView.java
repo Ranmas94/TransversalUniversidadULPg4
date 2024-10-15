@@ -153,6 +153,7 @@ public class FormularioInscripcionView extends javax.swing.JInternalFrame {
         jLabel1.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         jLabel1.setText("Formulario de Inscripción");
 
+        jbInscribir.setBackground(new java.awt.Color(0, 204, 255));
         jbInscribir.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jbInscribir.setText("Inscribir");
         jbInscribir.addActionListener(new java.awt.event.ActionListener() {
@@ -161,6 +162,7 @@ public class FormularioInscripcionView extends javax.swing.JInternalFrame {
             }
         });
 
+        jbAnular.setBackground(new java.awt.Color(0, 204, 255));
         jbAnular.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jbAnular.setText("Anular Inscripción");
         jbAnular.addActionListener(new java.awt.event.ActionListener() {
@@ -169,6 +171,7 @@ public class FormularioInscripcionView extends javax.swing.JInternalFrame {
             }
         });
 
+        jbSalir.setBackground(new java.awt.Color(0, 204, 255));
         jbSalir.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jbSalir.setText("Salir");
         jbSalir.addActionListener(new java.awt.event.ActionListener() {

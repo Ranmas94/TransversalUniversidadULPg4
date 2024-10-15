@@ -76,6 +76,7 @@ public class ConsultaDeAlumnosPorMateria extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(tabla);
 
+        jbSalir.setBackground(new java.awt.Color(0, 204, 255));
         jbSalir.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jbSalir.setText("Salir");
         jbSalir.addActionListener(new java.awt.event.ActionListener() {

@@ -74,6 +74,7 @@ public class ActualizacionDeNotas extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(tabla);
 
+        jbGuardar.setBackground(new java.awt.Color(0, 204, 255));
         jbGuardar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jbGuardar.setText("Guardar");
         jbGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -82,6 +83,7 @@ public class ActualizacionDeNotas extends javax.swing.JInternalFrame {
             }
         });
 
+        jbSalir.setBackground(new java.awt.Color(0, 204, 255));
         jbSalir.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jbSalir.setText("Salir");
         jbSalir.addActionListener(new java.awt.event.ActionListener() {

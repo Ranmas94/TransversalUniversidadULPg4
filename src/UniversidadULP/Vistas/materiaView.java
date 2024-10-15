@@ -34,7 +34,6 @@ private MateriaData matData = new MateriaData();
 
         tfCodigo = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jbBuscar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         contenedor = new javax.swing.JPanel();
         tfAnio = new javax.swing.JTextField();
@@ -47,6 +46,8 @@ private MateriaData matData = new MateriaData();
         jbNuevo = new javax.swing.JButton();
         jbEliminar = new javax.swing.JButton();
         cbEstado = new javax.swing.JCheckBox();
+        jSeparator1 = new javax.swing.JSeparator();
+        jbBuscar = new javax.swing.JButton();
 
         setTitle("Formulario de Materia");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -59,16 +60,6 @@ private MateriaData matData = new MateriaData();
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel3.setText("Código:");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, -1, -1));
-
-        jbBuscar.setBackground(new java.awt.Color(51, 204, 255));
-        jbBuscar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jbBuscar.setText("Buscar");
-        jbBuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbBuscarActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jbBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 70, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -146,6 +137,17 @@ private MateriaData matData = new MateriaData();
         cbEstado.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         cbEstado.setForeground(new java.awt.Color(255, 255, 255));
         contenedor.add(cbEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, -1, -1));
+        contenedor.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 440, 20));
+
+        jbBuscar.setBackground(new java.awt.Color(51, 204, 255));
+        jbBuscar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jbBuscar.setText("Buscar");
+        jbBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbBuscarActionPerformed(evt);
+            }
+        });
+        contenedor.add(jbBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 80, -1, -1));
 
         getContentPane().add(contenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 340));
 
@@ -207,6 +209,7 @@ private MateriaData matData = new MateriaData();
 
     private void jbNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNuevoActionPerformed
         limpiarCampos(contenedor);
+        tfCodigo.setText("");
         matActual = null;
     }//GEN-LAST:event_jbNuevoActionPerformed
 
@@ -231,6 +234,7 @@ private MateriaData matData = new MateriaData();
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JButton jbBuscar;
     private javax.swing.JButton jbEliminar;
     private javax.swing.JButton jbGuardar;
