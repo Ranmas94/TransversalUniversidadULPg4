@@ -5,6 +5,9 @@
  */
 package UniversidadULP.Vistas;
 
+import static java.time.Clock.system;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Usuario
@@ -106,9 +109,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(jMenu4);
 
         itemSalir.setText("Salir");
-        itemSalir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itemSalirActionPerformed(evt);
+        itemSalir.addMenuListener(new javax.swing.event.MenuListener() {
+            public void menuCanceled(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuDeselected(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuSelected(javax.swing.event.MenuEvent evt) {
+                itemSalirMenuSelected(evt);
             }
         });
         jMenuBar1.add(itemSalir);
@@ -131,6 +138,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void itemFormAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemFormAlumnoActionPerformed
@@ -173,9 +181,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
         escritorio.add(m);
     }//GEN-LAST:event_itemAlumnoporMateriaActionPerformed
 
-    private void itemSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemSalirActionPerformed
-       
-    }//GEN-LAST:event_itemSalirActionPerformed
+    private void itemSalirMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_itemSalirMenuSelected
+           int respuesta = JOptionPane.showConfirmDialog(this, "¿Seguro que deseas salir?", "Confirmar salida", JOptionPane.YES_NO_OPTION);
+    if (respuesta == JOptionPane.YES_OPTION) {
+    System.exit(0);
+    }   
+    }//GEN-LAST:event_itemSalirMenuSelected
 
     /**
      * @param args the command line arguments
