@@ -9,7 +9,7 @@ package UniversidadULP.Entidades;
  * @author Ranma
  */
 public class Inscripcion {
-    private int idInscripcion;
+    private int idMateria;
     private Alumno alumno;
     private Materia materia;
     private double nota;
@@ -19,13 +19,15 @@ public class Inscripcion {
     }
 
     // Constructor con todos los atributos
-    public Inscripcion(int idInscripcion, Alumno alumno, Materia materia, double nota) {
-        this.idInscripcion = idInscripcion;
+    public Inscripcion(int idMateria, Alumno alumno, Materia materia, double nota) {
+        this.idMateria = idMateria;
         this.alumno = alumno;
         this.materia = materia;
         this.nota = nota;
     }
 
+    
+    
     public Inscripcion(Alumno alumno, Materia materia, double nota) {
         this.alumno = alumno;
         this.materia = materia;
@@ -42,12 +44,12 @@ public class Inscripcion {
     
 
     // Getters y Setters
-    public int getIdInscripcion() {
-        return idInscripcion;
+    public int getIdMateria() {
+        return idMateria;
     }
 
-    public void setIdInscripcion(int idInscripcion) {
-        this.idInscripcion = idInscripcion;
+    public void setIdMateria(int idMateria) {
+        this.idMateria = idMateria;
     }
 
     public Alumno getAlumno() {
@@ -78,7 +80,7 @@ public class Inscripcion {
     @Override
     public String toString() {
         return "Inscripcion{" +
-                "inscripcion=" + idInscripcion +
+                "inscripcion=" + idMateria +
                 ", alumno=" + alumno +
                 ", materia=" + materia +
                 ", nota=" + nota +

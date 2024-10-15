@@ -45,7 +45,7 @@ public class InscripcionData {
              
              ResultSet rs = ps.getGeneratedKeys();
              while(rs.next()){
-                 insc.setIdInscripcion(rs.getInt(1));
+                 insc.setIdMateria(rs.getInt(1));
                 JOptionPane.showMessageDialog(null,"El Alumno ha sido inscripto exitosamente.");
              }
              
@@ -170,7 +170,7 @@ public class InscripcionData {
         
         while (rs.next()) {
             Inscripcion insc = new Inscripcion();
-            insc.setIdInscripcion(rs.getInt("idInscripto"));
+            insc.setIdMateria(rs.getInt("idInscripto"));
             Alumno alu = aluData.buscarAlumno(rs.getInt("idAlumno"));
             Materia mat = matData.buscarMateria(rs.getInt("idMateria"));
             
@@ -202,7 +202,7 @@ public class InscripcionData {
         
         while (rs.next()) {
             Inscripcion insc = new Inscripcion();
-            insc.setIdInscripcion(rs.getInt("idInscripto"));
+            insc.setIdMateria(rs.getInt("idInscripto"));
             Alumno alu = aluData.buscarAlumno(rs.getInt("idAlumno"));
             Materia mat = matData.buscarMateria(rs.getInt("idMateria"));
             
