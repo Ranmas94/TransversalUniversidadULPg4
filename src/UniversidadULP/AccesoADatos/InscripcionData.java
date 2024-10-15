@@ -28,16 +28,18 @@ public class InscripcionData {
     
 //Guardar Inscripcion
       public void guardarInscripcion(Inscripcion insc) {
-         String sql = "INSERT INTO inscripcion (alumno, materia, nota) "
+         String sql = "INSERT INTO inscripcion (nota, idMateria,idAlumno) "
                  + "VALUES (?,?,?) ";
          
          try {
              PreparedStatement ps = con.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
              
              
-             ps.setInt(1, insc.getAlumno().getIdAlumno());
+             ps.setInt(1, 0);
              ps.setInt(2, insc.getMateria().getIdMateria());
-             ps.setDouble(3, insc.getNota());
+             ps.setInt(3, insc.getAlumno().getIdAlumno());
+             
+             
              
              ps.executeUpdate();
              
@@ -50,7 +52,7 @@ public class InscripcionData {
              ps.close();
              
          } catch (SQLException ex) {
-             JOptionPane.showMessageDialog(null,"Error al acceder a la tabla Incripción."+ ex);
+             JOptionPane.showMessageDialog(null,"Error al guardar alumno ."+ ex);
          }
      }
       

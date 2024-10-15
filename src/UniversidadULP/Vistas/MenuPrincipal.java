@@ -141,7 +141,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void itemManejodeInscripcionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemManejodeInscripcionesActionPerformed
         escritorio.removeAll();
         escritorio.repaint();
-        FormularioInscripcion m = new FormularioInscripcion();
+        FormularioInscripcionView m = new FormularioInscripcionView();
         m.setVisible(true);
         escritorio.add(m);
     }//GEN-LAST:event_itemManejodeInscripcionesActionPerformed

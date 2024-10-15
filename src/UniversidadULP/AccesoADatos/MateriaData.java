@@ -48,17 +48,18 @@ public class MateriaData {
          }
      }
        //Buscar materia por id
-     public Materia buscarMateria(int idInscripcion){
-         String sql ="SELECT nombre,anio, estado FROM Materia WHERE idMateria = ?";
+     public Materia buscarMateria(int idMateria){
+         String sql ="SELECT idMateria, nombre, anio, estado FROM Materia WHERE idMateria = ?";
          
          Materia mat = null;
          try {
              PreparedStatement ps = con.prepareStatement(sql);
-             ps.setInt(1, idInscripcion);
+             ps.setInt(1, idMateria);
               ResultSet rs = ps.executeQuery();
               
               if(rs.next()){
                   mat = new Materia();
+                  mat.setIdMateria(rs.getInt("idMateria"));
                   mat.setNombre(rs.getString("nombre"));
                   mat.setAnioMateria(rs.getInt("anio"));
                   mat.setActivo(rs.getBoolean("estado"));
