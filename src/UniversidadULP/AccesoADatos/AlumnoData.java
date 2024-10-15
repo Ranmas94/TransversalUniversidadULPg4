@@ -79,8 +79,6 @@ public class AlumnoData {
                   al.setFechaNac(rs.getDate("fechadeNacimiento").toLocalDate());
                   al.setActivo(rs.getBoolean("estado"));
                   
-              }else{
-                  JOptionPane.showMessageDialog(null,"No se encontró el alumno por dni");
               }
              
              rs.close();  // Cerrar el ResultSet

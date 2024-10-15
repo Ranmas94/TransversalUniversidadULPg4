@@ -258,6 +258,8 @@ public class FormularioAlumnoView extends javax.swing.JInternalFrame {
             jdcFechaNac.setDate(date);
             
             
+        }else{
+            JOptionPane.showMessageDialog(this, "Alumno no encontrado");
         }
         
         }catch(NumberFormatException ex){
