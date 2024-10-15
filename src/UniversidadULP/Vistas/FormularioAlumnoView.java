@@ -52,37 +52,44 @@ public class FormularioAlumnoView extends javax.swing.JInternalFrame {
         jrEstado = new javax.swing.JRadioButton();
         jdcFechaNac = new com.toedter.calendar.JDateChooser();
 
-        jlAlumno.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        setBackground(new java.awt.Color(0, 153, 204));
+
+        jlAlumno.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         jlAlumno.setText("Alumno");
 
-        jlDocumento.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jlDocumento.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jlDocumento.setText("Documento:");
 
+        jtDocumento.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jtDocumento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtDocumentoActionPerformed(evt);
             }
         });
 
-        jlApellido.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jlApellido.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jlApellido.setText("Apellido:");
 
+        jtApellido.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jtApellido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtApellidoActionPerformed(evt);
             }
         });
 
-        jlNombre.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jlNombre.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jlNombre.setText("Nombre:");
 
-        jlEstado.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jtNombre.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+
+        jlEstado.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jlEstado.setText("Estado:");
 
-        jlFechaNacimiento.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jlFechaNacimiento.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jlFechaNacimiento.setText("Fecha de Nacimiento:");
 
-        jbBuscar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jbBuscar.setBackground(new java.awt.Color(51, 204, 255));
+        jbBuscar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jbBuscar.setText("Buscar");
         jbBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,7 +97,8 @@ public class FormularioAlumnoView extends javax.swing.JInternalFrame {
             }
         });
 
-        jbNuevo.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jbNuevo.setBackground(new java.awt.Color(51, 204, 255));
+        jbNuevo.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jbNuevo.setText("Nuevo");
         jbNuevo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,7 +106,8 @@ public class FormularioAlumnoView extends javax.swing.JInternalFrame {
             }
         });
 
-        jbEliminar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jbEliminar.setBackground(new java.awt.Color(51, 204, 255));
+        jbEliminar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jbEliminar.setText("Eliminar");
         jbEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,7 +115,8 @@ public class FormularioAlumnoView extends javax.swing.JInternalFrame {
             }
         });
 
-        jbGuardar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jbGuardar.setBackground(new java.awt.Color(51, 204, 255));
+        jbGuardar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jbGuardar.setText("Guardar");
         jbGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,7 +124,8 @@ public class FormularioAlumnoView extends javax.swing.JInternalFrame {
             }
         });
 
-        jbSalir.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jbSalir.setBackground(new java.awt.Color(51, 204, 255));
+        jbSalir.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jbSalir.setText("Salir");
         jbSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -135,22 +146,18 @@ public class FormularioAlumnoView extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(73, 73, 73)
+                        .addGap(61, 61, 61)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jlApellido)
                             .addComponent(jlDocumento)
                             .addComponent(jlNombre)
                             .addComponent(jlEstado)
-                            .addComponent(jlFechaNacimiento)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jbNuevo)
-                                .addGap(18, 18, 18)
-                                .addComponent(jbEliminar)))
+                            .addComponent(jlFechaNacimiento))
+                        .addGap(25, 25, 25)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(6, 6, 6)
                                 .addComponent(jrEstado))
-                            .addComponent(jdcFechaNac, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(jtNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
@@ -159,48 +166,56 @@ public class FormularioAlumnoView extends javax.swing.JInternalFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(jbBuscar))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(11, 11, 11)
-                                .addComponent(jbGuardar)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jbEliminar)
+                                    .addComponent(jdcFechaNac, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addComponent(jbSalir))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(257, 257, 257)
+                        .addGap(215, 215, 215)
                         .addComponent(jlAlumno)))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jbNuevo)
+                .addGap(18, 18, 18)
+                .addComponent(jbGuardar)
+                .addGap(288, 288, 288))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jlAlumno)
+                .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jlAlumno)
-                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jbBuscar)
                             .addComponent(jtDocumento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jlDocumento))
-                        .addGap(30, 30, 30)
+                        .addGap(21, 21, 21)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jlApellido)
                             .addComponent(jtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(34, 34, 34)
+                        .addGap(25, 25, 25)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jlNombre)
                             .addComponent(jtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(32, 32, 32)
+                        .addGap(26, 26, 26)
                         .addComponent(jrEstado))
                     .addComponent(jlEstado))
-                .addGap(34, 34, 34)
+                .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jlFechaNacimiento)
                     .addComponent(jdcFechaNac, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbNuevo)
-                    .addComponent(jbEliminar)
                     .addComponent(jbGuardar)
+                    .addComponent(jbEliminar)
                     .addComponent(jbSalir))
-                .addGap(47, 47, 47))
+                .addGap(32, 32, 32))
         );
 
         pack();
