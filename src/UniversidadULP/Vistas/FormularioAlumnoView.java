@@ -246,7 +246,8 @@ public class FormularioAlumnoView extends javax.swing.JInternalFrame {
     private void jbBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBuscarActionPerformed
         // TODO add your handling code here:
         try{
-        Integer dni=Integer.parseInt(jtDocumento.getText());
+        int dni=Integer.parseInt(jtDocumento.getText());
+        
         alumnoActual=aluData.buscarAlumno(dni);
         if(alumnoActual!=null){
             jtApellido.setText(alumnoActual.getApellido());
@@ -273,7 +274,7 @@ public class FormularioAlumnoView extends javax.swing.JInternalFrame {
     private void jbGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardarActionPerformed
         // TODO add your handling code here:
         try{
-            Integer dni=Integer.parseInt(jtDocumento.getText());
+            int dni=Integer.parseInt(jtDocumento.getText());
             String nombre=jtNombre.getText();
             String apellido=jtApellido.getText();
             if(nombre.isEmpty()||apellido.isEmpty()){

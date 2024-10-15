@@ -49,7 +49,8 @@ public class InscripcionData {
                 JOptionPane.showMessageDialog(null,"El Alumno ha sido inscripto exitosamente.");
              }
              
-             ps.close();
+              ps.close();
+             rs.close();
              
          } catch (SQLException ex) {
              JOptionPane.showMessageDialog(null,"Error al guardar alumno ."+ ex);
@@ -92,7 +93,7 @@ public class InscripcionData {
             if(filas>0){
                 JOptionPane.showMessageDialog(null,"Inscripción eliminada. ");
             }
-            
+            ps.close();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null,"Error al eliminar la inscripcion. "+ ex);
         }
@@ -120,7 +121,8 @@ public class InscripcionData {
             materia.setAnioMateria(rs.getInt("anio"));
             materias.add(materia);  
         }
-            ps.close();
+             ps.close();
+             rs.close();
       } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al obtener Inscripciones."+ex.getMessage());
         }
@@ -151,6 +153,7 @@ public class InscripcionData {
             materias.add(materia);  
         }
             ps.close();
+             rs.close();
       } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al obtener Inscripciones."+ex.getMessage());
         }
@@ -179,6 +182,7 @@ public class InscripcionData {
             
         }
         ps.close();
+        rs.close();
         } catch (SQLException ex) {
 
              JOptionPane.showMessageDialog(null, "Error al obtener Inscripciones."+ex);
@@ -210,6 +214,7 @@ public class InscripcionData {
             
         }
         ps.close();
+        rs.close();
         } catch (SQLException ex) {
 
              JOptionPane.showMessageDialog(null, "Error al obtener Inscripciones."+ex);
@@ -244,7 +249,7 @@ public class InscripcionData {
                 
             }
             ps.close();
-            
+             rs.close();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al obtener AlumnoxMateria. "+ex);
         }

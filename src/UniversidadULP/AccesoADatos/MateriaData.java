@@ -42,6 +42,7 @@ public class MateriaData {
              }
              
              ps.close();
+             rs.close();
              
          } catch (SQLException ex) {
              JOptionPane.showMessageDialog(null,"Error al guardar materia "+ ex);
@@ -69,6 +70,7 @@ public class MateriaData {
               }
              
              ps.close();
+             rs.close();
          } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null,"Error al buscar materia "+ ex);
          }
@@ -135,7 +137,8 @@ public class MateriaData {
                   materias.add(mat);
              }
              
-             ps.close();
+              ps.close();
+             rs.close();
              
          } catch (SQLException ex) {
               JOptionPane.showMessageDialog(null,"Error al acceder a la tabla materia"+ ex);

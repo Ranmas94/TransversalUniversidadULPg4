@@ -51,7 +51,8 @@ public class AlumnoData {
                 JOptionPane.showMessageDialog(null,"Alumno guardado");
              }
              
-             ps.close();
+              ps.close();
+             rs.close();
              
          } catch (SQLException ex) {
              JOptionPane.showMessageDialog(null,"Error al acceder a la tabla alumno"+ ex);
@@ -60,7 +61,7 @@ public class AlumnoData {
      
      //Buscar alumno por dni
      public Alumno buscarAlumno(int dni){
-         String sql ="SELECT idAlumno,apellido, nombre, fechadeNacimiento, estado FROM Alumno WHERE dni = ?";
+         String sql ="SELECT * FROM alumno WHERE dni = ?";
          
          Alumno al = null;
          try {
@@ -70,16 +71,19 @@ public class AlumnoData {
               
               if(rs.next()){
                  al = new Alumno();
+                 
                   al.setIdAlumno(rs.getInt("idAlumno"));
+                  al.setDni(dni);
                   al.setApellido(rs.getString("apellido"));
                   al.setNombre(rs.getString("nombre"));
                   al.setFechaNac(rs.getDate("fechadeNacimiento").toLocalDate());
                   al.setActivo(rs.getBoolean("estado"));
                   
               }else{
-                  JOptionPane.showMessageDialog(null,"No se econtró el alumno");
+                  JOptionPane.showMessageDialog(null,"No se encontró el alumno por dni");
               }
              
+             rs.close();  // Cerrar el ResultSet
              ps.close();
          } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null,"Error al acceder a la tabla alumno"+ ex);
@@ -89,7 +93,7 @@ public class AlumnoData {
      
      //Buscar alumno por id
       public Alumno buscarAlumnoId(int id){
-         String sql ="SELECT dni,apellido, nombre, fechadeNacimiento, estado FROM Alumno WHERE idAlumno= ?";
+         String sql ="SELECT dni,apellido, nombre, fechadeNacimiento, estado FROM alumno WHERE idAlumno= ?";
          
          Alumno al = null;
          try {
@@ -106,10 +110,11 @@ public class AlumnoData {
                   al.setActivo(rs.getBoolean("estado"));
                   
               }else{
-                  JOptionPane.showMessageDialog(null,"No se econtró el alumno");
+                  JOptionPane.showMessageDialog(null,"No se encontró el alumno");
               }
              
-             ps.close();
+              ps.close();
+             rs.close();
          } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null,"Error al acceder a la tabla alumno"+ ex);
          }
@@ -118,7 +123,7 @@ public class AlumnoData {
       
       //listar alumnos
       public List<Alumno> listarAlumnos(){
-          String sql = "SELECT idAlumno,dni,apellido, nombre, fechadeNacimiento, estado FROM Alumno WHERE estado = 1";
+          String sql = "SELECT idAlumno,dni,apellido, nombre, fechadeNacimiento, estado FROM alumno WHERE estado = 1";
           ArrayList<Alumno> alumnos = new ArrayList<>();
           
          try {
@@ -137,7 +142,8 @@ public class AlumnoData {
                   alumnos.add(al);
              }
              
-             ps.close();
+              ps.close();
+             rs.close();
              
          } catch (SQLException ex) {
               JOptionPane.showMessageDialog(null,"Error al acceder a la tabla alumno"+ ex);
@@ -184,7 +190,7 @@ public class AlumnoData {
             ps.close();
              
          } catch (SQLException ex) {
-             JOptionPane.showMessageDialog(null,"Error al acceder a la tabla alumno"+ ex);
+             JOptionPane.showMessageDialog(null,"Error al dar de baja a alumno"+ ex);
          }
       }
       
@@ -202,7 +208,7 @@ public class AlumnoData {
             ps.close();
              
          } catch (SQLException ex) {
-             JOptionPane.showMessageDialog(null,"Error al acceder a la tabla alumno"+ ex);
+             JOptionPane.showMessageDialog(null,"Error al dar de alta a alumno"+ ex);
          }
       }
        
@@ -222,7 +228,7 @@ public class AlumnoData {
             ps.close();
              
          } catch (SQLException ex) {
-             Logger.getLogger(AlumnoData.class.getName()).log(Level.SEVERE, null, ex);
+             JOptionPane.showMessageDialog(null,"Error al borrar alumno"+ ex);
          }
           
        }
