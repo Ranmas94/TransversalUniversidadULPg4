@@ -48,6 +48,7 @@ private MateriaData matData = new MateriaData();
         jbEliminar = new javax.swing.JButton();
         cbEstado = new javax.swing.JCheckBox();
 
+        setTitle("Formulario de Materia");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tfCodigo.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
