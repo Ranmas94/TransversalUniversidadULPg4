@@ -35,10 +35,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
         itemFormMateria = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         itemManejodeInscripciones = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        itemNotas = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenu5 = new javax.swing.JMenu();
+        itemAlumnoporMateria = new javax.swing.JMenuItem();
+        itemSalir = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -87,20 +87,35 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
         jMenu3.add(itemManejodeInscripciones);
 
-        jMenuItem4.setText("Manipulacion de Notas");
-        jMenu3.add(jMenuItem4);
+        itemNotas.setText("Manipulacion de Notas");
+        itemNotas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemNotasActionPerformed(evt);
+            }
+        });
+        jMenu3.add(itemNotas);
 
         jMenuBar1.add(jMenu3);
 
         jMenu4.setText("Consultas");
 
-        jMenuItem5.setText("Alumnos por Materia");
-        jMenu4.add(jMenuItem5);
+        itemAlumnoporMateria.setText("Alumnos por Materia");
+        itemAlumnoporMateria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemAlumnoporMateriaActionPerformed(evt);
+            }
+        });
+        jMenu4.add(itemAlumnoporMateria);
 
         jMenuBar1.add(jMenu4);
 
-        jMenu5.setText("Salir");
-        jMenuBar1.add(jMenu5);
+        itemSalir.setText("Salir");
+        itemSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemSalirActionPerformed(evt);
+            }
+        });
+        jMenuBar1.add(itemSalir);
 
         setJMenuBar(jMenuBar1);
 
@@ -146,6 +161,26 @@ public class MenuPrincipal extends javax.swing.JFrame {
         escritorio.add(m);
     }//GEN-LAST:event_itemManejodeInscripcionesActionPerformed
 
+    private void itemNotasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemNotasActionPerformed
+        escritorio.removeAll();
+        escritorio.repaint();
+        ActualizaciónDeNotas m = new ActualizaciónDeNotas();
+        m.setVisible(true);
+        escritorio.add(m);
+    }//GEN-LAST:event_itemNotasActionPerformed
+
+    private void itemAlumnoporMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemAlumnoporMateriaActionPerformed
+        escritorio.removeAll();
+        escritorio.repaint();
+        ConsultaDeAlumnosPorMateria m = new ConsultaDeAlumnosPorMateria();
+        m.setVisible(true);
+        escritorio.add(m);
+    }//GEN-LAST:event_itemAlumnoporMateriaActionPerformed
+
+    private void itemSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemSalirActionPerformed
+        dispose();
+    }//GEN-LAST:event_itemSalirActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -183,16 +218,16 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane escritorio;
+    private javax.swing.JMenuItem itemAlumnoporMateria;
     private javax.swing.JMenuItem itemFormAlumno;
     private javax.swing.JMenuItem itemFormMateria;
     private javax.swing.JMenuItem itemManejodeInscripciones;
+    private javax.swing.JMenuItem itemNotas;
+    private javax.swing.JMenu itemSalir;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
     // End of variables declaration//GEN-END:variables
 }

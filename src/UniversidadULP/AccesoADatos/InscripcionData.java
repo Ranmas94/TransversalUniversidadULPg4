@@ -227,7 +227,7 @@ public class InscripcionData {
                   + "WHERE i.idAlumno = a.idAlumno AND idMateria = ?";
           
         try {
-            PreparedStatement ps = con.prepareCall(sql);
+            PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, idMateria);
             
             ResultSet rs = ps.executeQuery();
