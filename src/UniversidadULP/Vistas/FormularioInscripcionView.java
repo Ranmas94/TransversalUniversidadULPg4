@@ -16,19 +16,20 @@ import javax.swing.table.DefaultTableModel;
  * @author Lourdes
  */
 public class FormularioInscripcionView extends javax.swing.JInternalFrame {
-private DefaultTableModel modelo = new DefaultTableModel(){
-@Override
-    public boolean isCellEditable(int f, int c){
-        return false;
-    }
-};
+
+    private DefaultTableModel modelo = new DefaultTableModel() {
+        @Override
+        public boolean isCellEditable(int f, int c) {
+            return false;
+        }
+    };
     private MateriaData matData = new MateriaData();
     private AlumnoData aluData = new AlumnoData();
     private InscripcionData insData = new InscripcionData();
-   
+
     public FormularioInscripcionView() {
         initComponents();
-          cabecera();
+        cabecera();
         cargarComboBox();
         ButtonGroup group = new ButtonGroup();
         group.add(rbMatCursada);
@@ -37,7 +38,6 @@ private DefaultTableModel modelo = new DefaultTableModel(){
         jbInscribir.setEnabled(false);
     }
 
-   
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -205,29 +205,29 @@ private DefaultTableModel modelo = new DefaultTableModel(){
     }//GEN-LAST:event_rbMatCursadaActionPerformed
 
     private void rbMatNoCursadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbMatNoCursadaActionPerformed
-          jbAnular.setEnabled(false);
+        jbAnular.setEnabled(false);
         jbInscribir.setEnabled(true);
         borrarTabla();
         cargarMatNoCursadas();
     }//GEN-LAST:event_rbMatNoCursadaActionPerformed
 
     private void jbInscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbInscribirActionPerformed
-      
-       inscribir();
+
+        inscribir();
         cargarMatCursadas();
-         cargarMatNoCursadas();
+        cargarMatNoCursadas();
     }//GEN-LAST:event_jbInscribirActionPerformed
 
     private void jbAnularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAnularActionPerformed
-        
+
         anularInscripcion();
-         cargarMatNoCursadas();
-         cargarMatCursadas();
-        
+        cargarMatNoCursadas();
+        cargarMatCursadas();
+
     }//GEN-LAST:event_jbAnularActionPerformed
 
     private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalirActionPerformed
-       dispose();
+        dispose();
     }//GEN-LAST:event_jbSalirActionPerformed
 
 
@@ -246,97 +246,94 @@ private DefaultTableModel modelo = new DefaultTableModel(){
     private javax.swing.JTable tabla;
     // End of variables declaration//GEN-END:variables
  //  METODOS
-    
- //Cabecera de tabla
-    private void cabecera(){
+
+    //Cabecera de tabla
+    private void cabecera() {
         modelo.addColumn("ID");
         modelo.addColumn("Nombre");
         modelo.addColumn("Año");
         tabla.setModel(modelo);
     }
-    
-     private void borrarTabla() {
+
+    private void borrarTabla() {
         int f = tabla.getRowCount() - 1;
         for (; f >= 0; f--) {
             modelo.removeRow(f);
         }
     }
-    
-  private void cargarComboBox(){
-      for(Alumno al :aluData.listarAlumnos()){
-          cbAlumno.addItem(al);
-      }
-  }
-  
-  private void cargarMatCursadas(){
-      Alumno al = (Alumno) cbAlumno.getSelectedItem();
-      
-      if(al == null){
-          return;
-      }
-      
-      modelo.setRowCount(0);
-      for(Materia mat : insData.obtenerMateriasCursadas(al.getIdAlumno())){
-          modelo.addRow(new Object[]{mat.getIdMateria(),mat.getNombre(),mat.getAnioMateria()});
-      }
-  }
-  
-  private void cargarMatNoCursadas(){
-       Alumno al = (Alumno) cbAlumno.getSelectedItem();
-      
-      if(al == null){
-          return;
-      }
-      
-      modelo.setRowCount(0);
-      for(Materia mat : insData.obtenerMateriasNoCursadas(al.getIdAlumno())){
-          modelo.addRow(new Object[]{mat.getIdMateria(),mat.getNombre(),mat.getAnioMateria()});
-      }
-  }
-  
-  private void anularInscripcion(){
-       try{
-        int row = tabla.getSelectedRow(); //Obtenemos la ubicacion exacta del código seleccionado.
-        int col = tabla.getSelectedColumn();
-        if (col != 0) { //Como todos los códigos se encuentran en la columna 0, si a col se le asigna otro número saldrá un mensaje.
+
+    private void cargarComboBox() {
+        for (Alumno al : aluData.listarAlumnos()) {
+            cbAlumno.addItem(al);
+        }
+    }
+
+    private void cargarMatCursadas() {
+        Alumno al = (Alumno) cbAlumno.getSelectedItem();
+
+        if (al == null) {
+            return;
+        }
+
+        modelo.setRowCount(0);
+        for (Materia mat : insData.obtenerMateriasCursadas(al.getIdAlumno())) {
+            modelo.addRow(new Object[]{mat.getIdMateria(), mat.getNombre(), mat.getAnioMateria()});
+        }
+    }
+
+    private void cargarMatNoCursadas() {
+        Alumno al = (Alumno) cbAlumno.getSelectedItem();
+
+        if (al == null) {
+            return;
+        }
+
+        modelo.setRowCount(0);
+        for (Materia mat : insData.obtenerMateriasNoCursadas(al.getIdAlumno())) {
+            modelo.addRow(new Object[]{mat.getIdMateria(), mat.getNombre(), mat.getAnioMateria()});
+        }
+    }
+
+    private void anularInscripcion() {
+        try {
+            int row = tabla.getSelectedRow(); //Obtenemos la ubicacion exacta del código seleccionado.
+            int col = tabla.getSelectedColumn();
+            if (col != 0) { //Como todos los códigos se encuentran en la columna 0, si a col se le asigna otro número saldrá un mensaje.
+                JOptionPane.showMessageDialog(this, "Debes seleccionar el ID de la materia", "ERROR", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            int idMat = (Integer) tabla.getValueAt(row, col);
+            Alumno al = (Alumno) cbAlumno.getSelectedItem();
+
+            insData.borrarInscripcion(al.getIdAlumno(), idMat);
+
+        } catch (ArrayIndexOutOfBoundsException | ClassCastException e) {
             JOptionPane.showMessageDialog(this, "Debes seleccionar el ID de la materia", "ERROR", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        
-        int idMat = (Integer) tabla.getValueAt(row, col);
-         Alumno al = (Alumno) cbAlumno.getSelectedItem();
-         
-         insData.borrarInscripcion(al.getIdAlumno(), idMat);
-        
-        
-        
-       }catch(ArrayIndexOutOfBoundsException | ClassCastException e){
+    }
+
+    private void inscribir() {
+        try {
+            int row = tabla.getSelectedRow(); //Obtenemos la ubicacion exacta del código seleccionado.
+            int col = tabla.getSelectedColumn();
+            if (col != 0) { //Como todos los códigos se encuentran en la columna 0, si a col se le asigna otro número saldrá un mensaje.
+                JOptionPane.showMessageDialog(this, "Debes seleccionar el ID de la materia", "ERROR", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            int idMat = (int) tabla.getValueAt(row, col);
+            Materia mat = matData.buscarMateria(idMat);
+
+            Alumno al = (Alumno) cbAlumno.getSelectedItem();
+            Inscripcion in = new Inscripcion(al, mat);
+
+            insData.guardarInscripcion(in);
+
+        } catch (ArrayIndexOutOfBoundsException | ClassCastException e) {
             JOptionPane.showMessageDialog(this, "Debes seleccionar el ID de la materia", "ERROR", JOptionPane.ERROR_MESSAGE);
             return;
         }
-  }
-  
-  private void inscribir(){
-        try{
-        int row = tabla.getSelectedRow(); //Obtenemos la ubicacion exacta del código seleccionado.
-        int col = tabla.getSelectedColumn();
-        if (col != 0) { //Como todos los códigos se encuentran en la columna 0, si a col se le asigna otro número saldrá un mensaje.
-            JOptionPane.showMessageDialog(this, "Debes seleccionar el ID de la materia", "ERROR", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        
-         int idMat =(int) tabla.getValueAt(row, col);
-         Materia mat = matData.buscarMateria(idMat);
-         
-         Alumno al = (Alumno) cbAlumno.getSelectedItem();
-         Inscripcion in = new Inscripcion(al,mat);
-        
-         insData.guardarInscripcion(in);
-        
-        
-        }catch(ArrayIndexOutOfBoundsException | ClassCastException e){
-            JOptionPane.showMessageDialog(this, "Debes seleccionar el ID de la materia", "ERROR", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-  }
+    }
 }
