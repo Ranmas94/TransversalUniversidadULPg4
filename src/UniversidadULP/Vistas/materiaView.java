@@ -32,6 +32,10 @@ private MateriaData matData = new MateriaData();
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        tfCodigo = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jbBuscar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         contenedor = new javax.swing.JPanel();
         tfAnio = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
@@ -39,16 +43,36 @@ private MateriaData matData = new MateriaData();
         jLabel6 = new javax.swing.JLabel();
         jbGuardar = new javax.swing.JButton();
         jbSalir = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jbNuevo = new javax.swing.JButton();
         jbEliminar = new javax.swing.JButton();
         cbEstado = new javax.swing.JCheckBox();
-        tfCodigo = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jbBuscar = new javax.swing.JButton();
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tfCodigo.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        getContentPane().add(tfCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 180, -1));
+
+        jLabel3.setBackground(new java.awt.Color(204, 255, 255));
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel3.setText("Código:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, -1, -1));
+
+        jbBuscar.setBackground(new java.awt.Color(51, 204, 255));
+        jbBuscar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jbBuscar.setText("Buscar");
+        jbBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbBuscarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jbBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 70, -1, -1));
+
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Materia");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, -1, -1));
 
         contenedor.setBackground(new java.awt.Color(0, 153, 204));
         contenedor.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -91,11 +115,6 @@ private MateriaData matData = new MateriaData();
         });
         contenedor.add(jbSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 280, -1, -1));
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Materia");
-        contenedor.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, -1, -1));
-
         jLabel7.setBackground(new java.awt.Color(204, 255, 255));
         jLabel7.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -126,25 +145,6 @@ private MateriaData matData = new MateriaData();
         cbEstado.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         cbEstado.setForeground(new java.awt.Color(255, 255, 255));
         contenedor.add(cbEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, -1, -1));
-
-        tfCodigo.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        contenedor.add(tfCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 180, -1));
-
-        jLabel3.setBackground(new java.awt.Color(204, 255, 255));
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel3.setText("Código:");
-        contenedor.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, -1, -1));
-
-        jbBuscar.setBackground(new java.awt.Color(51, 204, 255));
-        jbBuscar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jbBuscar.setText("Buscar");
-        jbBuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbBuscarActionPerformed(evt);
-            }
-        });
-        contenedor.add(jbBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 70, -1, -1));
 
         getContentPane().add(contenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 340));
 
@@ -213,7 +213,7 @@ private MateriaData matData = new MateriaData();
         try{
             int id = Integer.parseInt(tfCodigo.getText());
             matData.borrarMateria(id);
-            JOptionPane.showMessageDialog(this, "borrado exitoso");
+           
 
         }catch(NumberFormatException ex){
             JOptionPane.showConfirmDialog(this, "Usted debe ingresar un número." + ex);

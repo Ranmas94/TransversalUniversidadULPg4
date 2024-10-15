@@ -5,7 +5,7 @@
  */
 package UniversidadULP.Vistas;
 
-import UniversidadULP.AccesoADatos.AlumnoData;
+
 import UniversidadULP.AccesoADatos.InscripcionData;
 import UniversidadULP.AccesoADatos.MateriaData;
 import UniversidadULP.Entidades.Alumno;
@@ -14,20 +14,21 @@ import javax.swing.table.DefaultTableModel;
 
 
 public class ConsultaDeAlumnosPorMateria extends javax.swing.JInternalFrame {
-private DefaultTableModel modelo = new DefaultTableModel(){
-@Override
-    public boolean isCellEditable(int f, int c){
-        return false;
-    }
-};
-     private MateriaData matData = new MateriaData();
-    private AlumnoData aluData = new AlumnoData();
-      private InscripcionData insData = new InscripcionData();
+
+    private DefaultTableModel modelo = new DefaultTableModel() {
+        @Override
+        public boolean isCellEditable(int f, int c) {
+            return false;
+        }
+    };
+    private MateriaData matData = new MateriaData();
+    private InscripcionData insData = new InscripcionData();
+
     public ConsultaDeAlumnosPorMateria() {
         initComponents();
         cargarComboBox();
         cabecera();
-        
+
     }
 
    
