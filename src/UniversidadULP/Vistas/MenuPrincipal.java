@@ -41,6 +41,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        escritorio.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
         javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
         escritorio.setLayout(escritorioLayout);
         escritorioLayout.setHorizontalGroup(
@@ -52,9 +54,16 @@ public class MenuPrincipal extends javax.swing.JFrame {
             .addGap(0, 543, Short.MAX_VALUE)
         );
 
+        jMenuBar1.setBackground(new java.awt.Color(153, 153, 153));
+        jMenuBar1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jMenuBar1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jMenuBar1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+
         jMenu1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jMenu1.setText("Alumno");
+        jMenu1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
 
+        itemFormAlumno.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         itemFormAlumno.setText("Formulario de Alumno");
         itemFormAlumno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,7 +76,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jMenu2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jMenu2.setText("Materia");
+        jMenu2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
 
+        itemFormMateria.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         itemFormMateria.setText("Formulario de Materia");
         itemFormMateria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -80,7 +91,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jMenu3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jMenu3.setText("Administración");
+        jMenu3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
 
+        itemManejodeInscripciones.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         itemManejodeInscripciones.setText("Manejo de Inscripciones");
         itemManejodeInscripciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,6 +102,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
         jMenu3.add(itemManejodeInscripciones);
 
+        itemNotas.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         itemNotas.setText("Manipulacion de Notas");
         itemNotas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,7 +115,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jMenu4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jMenu4.setText("Consultas");
+        jMenu4.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
 
+        itemAlumnoporMateria.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         itemAlumnoporMateria.setText("Alumnos por Materia");
         itemAlumnoporMateria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,6 +130,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         itemSalir.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         itemSalir.setText("Salir");
+        itemSalir.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         itemSalir.addMenuListener(new javax.swing.event.MenuListener() {
             public void menuCanceled(javax.swing.event.MenuEvent evt) {
             }
@@ -131,9 +148,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

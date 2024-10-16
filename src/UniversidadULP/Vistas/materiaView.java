@@ -87,7 +87,7 @@ private MateriaData matData = new MateriaData();
         jLabel6.setText("Año:");
         contenedor.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, -1, -1));
 
-        jbGuardar.setBackground(new java.awt.Color(51, 204, 255));
+        jbGuardar.setBackground(new java.awt.Color(153, 153, 153));
         jbGuardar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jbGuardar.setText("Guardar");
         jbGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -97,7 +97,7 @@ private MateriaData matData = new MateriaData();
         });
         contenedor.add(jbGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, -1, -1));
 
-        jbSalir.setBackground(new java.awt.Color(51, 204, 255));
+        jbSalir.setBackground(new java.awt.Color(153, 153, 153));
         jbSalir.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jbSalir.setText("Salir");
         jbSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -113,7 +113,7 @@ private MateriaData matData = new MateriaData();
         jLabel7.setText("Estado:");
         contenedor.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, -1, -1));
 
-        jbNuevo.setBackground(new java.awt.Color(51, 204, 255));
+        jbNuevo.setBackground(new java.awt.Color(153, 153, 153));
         jbNuevo.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jbNuevo.setText("Nuevo");
         jbNuevo.addActionListener(new java.awt.event.ActionListener() {
@@ -123,7 +123,7 @@ private MateriaData matData = new MateriaData();
         });
         contenedor.add(jbNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, -1));
 
-        jbEliminar.setBackground(new java.awt.Color(51, 204, 255));
+        jbEliminar.setBackground(new java.awt.Color(153, 153, 153));
         jbEliminar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jbEliminar.setText("Eliminar");
         jbEliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -139,7 +139,7 @@ private MateriaData matData = new MateriaData();
         contenedor.add(cbEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, -1, -1));
         contenedor.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 440, 20));
 
-        jbBuscar.setBackground(new java.awt.Color(51, 204, 255));
+        jbBuscar.setBackground(new java.awt.Color(153, 153, 153));
         jbBuscar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jbBuscar.setText("Buscar");
         jbBuscar.addActionListener(new java.awt.event.ActionListener() {
